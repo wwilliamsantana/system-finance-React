@@ -21,13 +21,13 @@ export const items: ItemProps[] = [
     value: 28
   },
   {
-    date: new Date(2022, 9, 5),
+    date: new Date(2022, 11, 5),
     category: "rent",
     title: "Aluguel",
     value: 850
   },
   {
-    date: new Date(2022, 9, 15),
+    date: new Date(2022, 10, 15),
     category: "salary",
     title: "Salario apt ",
     value: 2000
