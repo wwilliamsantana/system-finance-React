@@ -1,6 +1,11 @@
+import { ItemProps } from "../../data/items"
 import * as C from "./styles"
 
-export function TableArea(){
+interface Props{
+  list: ItemProps[]
+}
+
+export function TableArea({list}: Props){
 
   return (
     <C.Table>
@@ -15,6 +20,17 @@ export function TableArea(){
       </thead>
 
       <tbody>
+        {
+          list.map((item, index) => (
+            <tr key={index}>
+              <td>{}</td>
+              <td>{item.category}</td>
+              <td>{item.title}</td>
+              <td>{item.value}</td>
+            </tr>
+          ))
+        }
+
       </tbody>
 
     </C.Table>

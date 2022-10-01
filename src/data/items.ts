@@ -9,7 +9,7 @@ export interface ItemProps{
 
 export const items: ItemProps[] = [
   {
-    date: new Date(2022, 9, 16),
+    date: new Date(2022, 10, 16),
     category: "food",
     title: "McDonalds",
     value: 32.15
