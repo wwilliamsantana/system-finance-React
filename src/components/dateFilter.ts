@@ -2,7 +2,7 @@ import { ItemProps } from "../data/items"
 
 export const getCurrentMonth = () => {
   let now = new Date()
-  return `${now.getFullYear()}-${now.getMonth()+1}}`
+  return `${now.getFullYear()}-${now.getMonth()}}`
 }
 
 export const filterListByMonth = (list: ItemProps[], date: string): ItemProps[] => {
@@ -12,7 +12,7 @@ export const filterListByMonth = (list: ItemProps[], date: string): ItemProps[] 
   
   for(let i in list){
 
-    if(list[i].date.getFullYear() === parseInt(year)  && list[i].date.getMonth()+1 === parseInt(month) ){
+    if(list[i].date.getFullYear() === parseInt(year)  && list[i].date.getMonth() === parseInt(month) ){
       newList.push(list[i])
     }
 
