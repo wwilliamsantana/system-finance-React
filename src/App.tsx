@@ -6,6 +6,7 @@ import { items, ItemProps } from "./data/items"
 import { filterListByMonth, getCurrentMonth } from "./components/dateFilter"
 import { TableArea } from "./components/TableArea"
 import { InfoArea } from "./components/InfoArea"
+import { Form } from "./components/Form"
 
 
 export function App() {
@@ -17,6 +18,10 @@ export function App() {
 
   function handleCurrentMonth(date: string){
     setCurrentMonth(date)
+  }
+
+  function handleAddData(item: ItemProps){
+     setList(prevState => [...prevState, item])
   }
 
 
@@ -60,7 +65,7 @@ export function App() {
     expense={expense}
     />
 
-    {/* Área de inserção*/}
+    <Form onAdd={handleAddData}/>
 
     <TableArea list={filteredList}/>
 

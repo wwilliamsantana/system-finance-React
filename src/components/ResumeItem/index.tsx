@@ -3,16 +3,19 @@ import * as C from "./styles"
 interface Props{
   title: string
   value: number
+  color?: string
 }
 
 
-export function ResumeItem({title, value}: Props){
+export function ResumeItem({title, value, color}: Props){
   return (
 
     <C.Container>
 
     <C.Title>{title}</C.Title>
-    <C.Info>R$ {value}</C.Info>
+    <C.Info color={color}>
+      R$ {value}
+    </C.Info>
 
     </C.Container>
 

@@ -50,9 +50,12 @@ export function InfoArea({currentMonth, onCurrentMonth, income, expense}: Props)
         </C.MonthArea>
 
         <C.ResumeArea>
-          <ResumeItem title="Receitas" value={income}/>
-          <ResumeItem title="Despesas" value={expense}/>
-          <ResumeItem title="Balanços" value= {income - expense}/>
+          <ResumeItem title="Receitas" value={Number(income.toFixed(2))}/>
+          <ResumeItem title="Despesas" value={Number(expense.toFixed(2))}/>
+          <ResumeItem 
+            color={(income - expense) > 0 ? "green" : "red" } 
+            title="Balanços" 
+            value= {Number((income - expense).toFixed(2))}/>
         </C.ResumeArea>
 
     </C.Container>
