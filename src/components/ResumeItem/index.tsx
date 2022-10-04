@@ -12,8 +12,8 @@ export function ResumeItem({title, value, color}: Props){
 
     <C.Container>
 
-    <C.Title>{title}</C.Title>
-    <C.Info color={color}>
+    <C.Title>{title}</C.Title> {/* Título */}
+    <C.Info color={color}>  {/*Valor -> propriedade Color é opcional*/}
       R$ {value}
     </C.Info>
 
