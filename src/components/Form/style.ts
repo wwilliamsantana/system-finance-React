@@ -16,6 +16,12 @@ export const InputLabel = styled.div`
   margin: 10px;
 
 `
+export const InputLabelTitle = styled.div`
+  flex: 2;
+  margin: 10px;
+
+`
+
 
 export const Title = styled.div`
   font-weight: bold;
@@ -27,31 +33,31 @@ export const Input = styled.input`
   width: 100%;
   height: 30px;
   padding: 0 5px;
-  border: 1px solid lightblue;
+  border: 1px solid #44403C;
   border-radius: 5px;
 
 `
 
 export const Select = styled.select`
-  width: 100%;
+width: 100%;
   height: 30px;
   padding: 0 5px;
-  border: 1px solid lightblue;
+  border: 1px solid #44403C;
   border-radius: 5px;
 
 `
 
 export const Button = styled.button`
   width: 100%;
-  height: 30px;
+  height: 32px;
   padding: 0 5px;
-  border: 1px solid lightblue;
+  border: 1px solid #44403C;
   border-radius: 5px;
-  background-color: lightblue;
-  color: black;
+  background-color: #44403C;
+  color: white;
   cursor: pointer;
   &:hover {
-      background-color: blue;
+      opacity: 0.7;
       color: white;
   }
 `

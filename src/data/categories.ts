@@ -1,6 +1,6 @@
 
-export interface CategoriesProps{
-  [type: string]:{
+export interface CategoriesProps {
+  [type: string]: {
     title: string
     color: string
     expense: boolean
@@ -8,18 +8,28 @@ export interface CategoriesProps{
 }
 
 export const categories: CategoriesProps = {
-  food: { 
+  food: {
     title: "Alimentação",
     color: "blue",
     expense: true
   },
-  rent: { 
+  rent: {
     title: "Aluguel",
     color: "brown",
     expense: true
   },
-  salary: { 
+  salary: {
     title: "Salário",
+    color: "green",
+    expense: false
+  },
+  expense: {
+    title: "Despesas",
+    color: "red",
+    expense: true
+  },
+  income: {
+    title: "Entrada",
     color: "green",
     expense: false
   }

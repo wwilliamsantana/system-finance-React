@@ -16,27 +16,26 @@ export function App() {
   const [income, setIncome] = useState(0)
   const [expense, setExpense] = useState(0)
 
-  function handleCurrentMonth(date: string){
+  function handleCurrentMonth(date: string) {
     setCurrentMonth(date) //Data Atualizada de acordo a mudança do Usúario
   }
 
-  function handleAddData(item: ItemProps){
-     setList(prevState => [...prevState, item]) //Adicionar o elemento na nossa lista.
+  function handleAddData(item: ItemProps) {
+    setList(prevState => [...prevState, item]) //Adicionar o elemento na nossa lista.
   }
 
-
-  useEffect(()=> { //A cada mudança na lista ou no mês iremos alterar nossa Lista Filtrada
+  useEffect(() => { //A cada mudança na lista ou no mês iremos alterar nossa Lista Filtrada
     setFilteredList(filterListByMonth(list, currentMonth)) //Para alteramos nossa lista chamamos uma função que irá retornar uma lista de items de acordo a data passada
   }, [list, currentMonth])
 
-  useEffect(()=> { //A cada atualização no FilteredList (Lista filtrada) iremos atualizar os Valores da nossas variáveis de Renda/Despesas  + Elementos em tela por atualizar o FilteredList nossa TableArea mudará
-    let incomeCount = 0 
+  useEffect(() => { //A cada atualização no FilteredList (Lista filtrada) iremos atualizar os Valores da nossas variáveis de Renda/Despesas  + Elementos em tela por atualizar o FilteredList nossa TableArea mudará
+    let incomeCount = 0
     let expenseCount = 0
 
-    for(let i in filteredList){
-      if(categories[filteredList[i].category].expense){
+    for (let i in filteredList) {
+      if (categories[filteredList[i].category].expense) {
         expenseCount += filteredList[i].value
-      }else{
+      } else {
         incomeCount += filteredList[i].value
       }
     }
@@ -49,30 +48,30 @@ export function App() {
   }, [filteredList])
 
   return (
-   <C.Container>
-    <C.Header>
-      <C.HeaderText>
-        Sistema Financeiro
-      </C.HeaderText>
-    </C.Header>
+    <C.Container>
+      <C.Header>
+        <C.HeaderText>
+          Gerenciador Financeiro
+        </C.HeaderText>
+      </C.Header>
 
-    <C.Body>
+      <C.Body>
 
-    <InfoArea  //Área de informações 
-    onCurrentMonth={handleCurrentMonth} //Vamos ter como parâmetro a Data Atualizada
-    currentMonth={currentMonth} //Passamos a Data Atual
-    income={income} // Passamos os valores de income (Renda)
-    expense={expense} //Passamos os valores de expense (Despesa)
-    />
+        <InfoArea  //Área de informações 
+          onCurrentMonth={handleCurrentMonth} //Vamos ter como parâmetro a Data Atualizada
+          currentMonth={currentMonth} //Passamos a Data Atual
+          income={income} // Passamos os valores de income (Renda)
+          expense={expense} //Passamos os valores de expense (Despesa)
+        />
 
-    <Form onAdd={handleAddData}/> {/* onde vamos capturar nossos dados */}
+        <Form onAdd={handleAddData} /> {/* onde vamos capturar nossos dados */}
 
-    <TableArea list={filteredList}/> {/* Componentes da Tabela, irá receber a lista filtrada */}
+        <TableArea list={filteredList} /> {/* Componentes da Tabela, irá receber a lista filtrada */}
 
 
-    </C.Body>
+      </C.Body>
 
-   </C.Container>
+    </C.Container>
   )
 }
 

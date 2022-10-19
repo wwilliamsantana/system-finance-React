@@ -6,25 +6,25 @@ export const getCurrentMonth = () => { //Busca o mês atual
 }
 
 export const filterListByMonth = (list: ItemProps[], date: string): ItemProps[] => { //Retorna uma lista de acorodo o ANO/MÊS da nossa lista de items
-
+  console.log(list)
   let [year, month] = date.split("-")
 
-  let newList: ItemProps[] = list.filter(item => item.date.getFullYear() === parseInt(year)  && item.date.getMonth()+1 === parseInt(month))
-  
-  return newList 
+  let newList: ItemProps[] = list.filter(item => item.date.getFullYear() === parseInt(year) && item.date.getMonth() + 1 === parseInt(month))
+
+  return newList
 }
 
 export const formatMonths = (date: string): string => { //Retornar o mês em string
-    let [year, month] = date.split("-") 
-    let months = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]
+  let [year, month] = date.split("-")
+  let months = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"]
 
-    return `${months[parseInt(month) - 1]} de ${year}` //Retorna uma string contendo o mês + ano(number)
+  return `${months[parseInt(month) - 1]} de ${year}` //Retorna uma string contendo o mês + ano(number)
 }
 
 
 export const formtDateFull = (data: string) => {
-    
-    const [year, month, day] = data.split("-")
-    
-    return new Date(parseInt(year), parseInt(month)-1, parseInt(day))
+
+  const [year, month, day] = data.split("-")
+
+  return new Date(parseInt(year), parseInt(month) - 1, parseInt(day))
 }
